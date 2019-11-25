@@ -6,7 +6,8 @@ ARG DOCKTOOL_VERSION=1.0.8
 
 RUN apt-get update && \
     apt-get install -y curl \
-                        wget && \
+                        wget \
+                        procps && \
     curl -fsSL "https://github.com/yingzhuo/docktool/releases/download/$DOCKTOOL_VERSION/docktool-linux-amd64-$DOCKTOOL_VERSION" -o /bin/docktool && \
     chmod +x /bin/docktool && \
     apt-get clean && \

@@ -4,7 +4,9 @@ MAINTAINER 应卓 yingzhor@gmail.com
 
 ARG DOCKTOOL_VERSION=1.0.8
 
-RUN yum install -y curl wget && \
+RUN yum install -y curl \
+                    wget \
+                    procps && \
     curl -fsSL "https://github.com/yingzhuo/docktool/releases/download/$DOCKTOOL_VERSION/docktool-linux-amd64-$DOCKTOOL_VERSION" -o /bin/docktool && \
     chmod +x /bin/docktool && \
     yum clean all && \
