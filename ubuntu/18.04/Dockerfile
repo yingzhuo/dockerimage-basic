@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 MAINTAINER 应卓 yingzhor@gmail.com
 
-ARG DOCKTOOL_VERSION=1.0.9
+ARG DOCKTOOL_VERSION=1.0.10
 
 RUN apt-get update && \
     apt-get install -y curl \
