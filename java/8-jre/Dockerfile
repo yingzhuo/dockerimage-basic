@@ -2,7 +2,7 @@ FROM openjdk:8u232-jre-stretch
 
 MAINTAINER 应卓 yingzhor@gmail.com
 
-ARG DOCKTOOL_VERSION=v1.1.0
+ARG DOCKTOOL_VERSION=v1.1.2
 
 RUN apt-get update && \
     apt-get install -y curl \

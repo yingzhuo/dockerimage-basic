@@ -2,7 +2,7 @@ FROM centos:7.7.1908
 
 MAINTAINER 应卓 yingzhor@gmail.com
 
-ARG DOCKTOOL_VERSION=v1.1.0
+ARG DOCKTOOL_VERSION=v1.1.2
 
 RUN yum install -y curl \
                     wget \
