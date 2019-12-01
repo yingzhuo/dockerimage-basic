@@ -9,6 +9,10 @@ RUN apt-get update && \
                     procps \
                     zip \
                     unzip && \
-    curl -fsSL "https://github.com/yingzhuo/docktool/releases/download/v$DOCKTOOL_VERSION/docktool-linux-amd64-$DOCKTOOL_VERSION" -o /bin/docktool && \
+    wget https://github.com/yingzhuo/docktool/releases/download/v${DOCKTOOL_VERSION}/docktool-linux-amd64-${DOCKTOOL_VERSION}.tar.gz -O ./docktool.tar.gz && \
+    mkdir -p ./docktool/ && \
+    tar -zxf ./docktool.tar.gz -C ./docktool/ && \
+    cp ./docktool/docktool /bin/docktool && \
     chmod +x /bin/docktool && \
+    rm -rf ./docktool ./docktool.tar.gz && \
     rm -rf /var/lib/apt/lists/*
