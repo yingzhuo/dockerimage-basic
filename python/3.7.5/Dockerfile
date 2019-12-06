@@ -2,7 +2,7 @@ FROM python:3.7.5-alpine3.10
 
 MAINTAINER 应卓 yingzhor@gmail.com
 
-ARG DOCKTOOL_VERSION=1.1.2
+ARG DOCKTOOL_VERSION=1.1.3
 
 RUN apk add --no-cache curl \
             zip \
