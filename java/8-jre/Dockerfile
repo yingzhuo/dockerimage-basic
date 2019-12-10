@@ -1,4 +1,4 @@
-FROM openjdk:8u232-jre-stretch
+FROM openjdk:8u232-jre-slim
 
 MAINTAINER 应卓 yingzhor@gmail.com
 
