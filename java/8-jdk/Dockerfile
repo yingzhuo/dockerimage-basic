@@ -20,4 +20,4 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     ln -sf ${JAVA_HOME}/bin/java /bin/java
 
-CMD ["/bin/java", "--version"]
+CMD ["/bin/java", "-version"]
