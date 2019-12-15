@@ -17,4 +17,7 @@ RUN apt-get update && \
     cp ./docktool/docktool /bin/docktool && \
     chmod +x /bin/docktool && \
     rm -rf ./docktool ./docktool.tar.gz && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    ln -sf ${JAVA_HOME}/bin/java /bin/java
+
+CMD ["/bin/java", "--version"]
