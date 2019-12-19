@@ -1,11 +1,13 @@
-FROM centos:7.7.1908
+FROM openjdk:11.0.5-jre-slim
 
 MAINTAINER 应卓 yingzhor@gmail.com
 
 ARG DOCKTOOL_VERSION=1.1.5
 
-RUN yum install -y curl \
+RUN apt-get update && \
+    apt-get install -y \
                     wget \
+                    curl \
                     procps \
                     zip \
                     unzip && \
@@ -15,6 +17,7 @@ RUN yum install -y curl \
     cp ./docktool/docktool /bin/docktool && \
     chmod +x /bin/docktool && \
     rm -rf ./docktool ./docktool.tar.gz && \
-    yum clean all && \
-    rm -rf /var/cache/yum && \
-    rm -rf /var/log/*
+    rm -rf /var/lib/apt/lists/* && \
+    ln -sf ${JAVA_HOME}/bin/java /bin/java
+
+CMD ["/bin/java", "-version"]
