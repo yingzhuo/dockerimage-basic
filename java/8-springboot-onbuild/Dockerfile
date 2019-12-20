@@ -10,12 +10,14 @@ RUN chmod +x /bin/entrypoint && \
     mkdir -p /var/data/ && \
     mkdir -p /var/tmp/ && \
     mkdir -p /var/log/ && \
-    mkdir -p /opt/cnf/
+    mkdir -p /opt/cnf/ && \
+    mkdir -p /opt/init.d/
 
 VOLUME /var/data \
        /var/tmp \
        /var/log \
-       /opt/cnf
+       /opt/cnf \
+       /opt/init.d/
 
 STOPSIGNAL 15
 
