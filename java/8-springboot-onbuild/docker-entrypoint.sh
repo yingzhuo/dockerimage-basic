@@ -10,15 +10,28 @@ if [[ "${SPRING_PROFILES_ACTIVE}" == "" ]]; then
 fi
 
 # ----------------------------------------------------------------------------------
-# check timezone
+# check timezone, if not set. default to UTC
 # ----------------------------------------------------------------------------------
-if [[ "${TIMEZONE}" == "" ]]; then
-    echo "[WARNING] Environment 'TIMEZONE' is NOT set. Default to UTC."
-    TIMEZONE=UTC
+
+tz="${TIMEZONE}"
+
+if [[ "$tz" == "" ]]; then
+    tz="${TZ}"
 fi
 
-# set alias for 'TIMEZONE'
-TZ=${TIMEZONE}
+if [[ "${tz}" == "" ]]; then
+    echo "[WARNING] Environment 'TIMEZONE' or 'TZ' is NOT set. Default to UTC."
+    export TIMEZONE=UTC
+    export TZ=UTC
+else
+    export TIMEZONE=${tz}
+    export TZ=${tz}
+fi
+
+# ----------------------------------------------------------------------------------
+# wait other containers (optional)
+# ----------------------------------------------------------------------------------
+docktool --quiet wait -e="DOCKTOOL_WAIT_"
 
 # ----------------------------------------------------------------------------------
 # startup
