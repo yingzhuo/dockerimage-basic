@@ -9,7 +9,7 @@ ENV TIMEZONE=Asia/Shanghai \
 
 ADD ./docker-entrypoint.sh /bin/entrypoint
 
-RUN chmod +x /bin/entrypoint &&
+RUN chmod +x /bin/entrypoint && \
     mkdir -p /var/data && \
     mkdir -p /var/tmp && \
     mkdir -p /var/log && \
