@@ -13,7 +13,9 @@ if [[ "${profiles}" == "" ]]; then
 fi
 
 if [[ "${profiles}" == "" ]]; then
-  echo "[WARNING] Environment 'APP_PROFILES' or 'SPRING_PROFILES_ACTIVE' is NOT set."
+  echo "[WARNING] Environment 'APP_PROFILES' or 'SPRING_PROFILES_ACTIVE' is NOT set. Default to 'default'."
+  export APP_PROFILES='default'
+  export SPRING_PROFILES_ACTIVE='default'
 else
   export APP_PROFILES="${profiles}"
   export SPRING_PROFILES_ACTIVE="${profiles}"
@@ -30,7 +32,7 @@ if [[ "$tz" == "APP_TZ" ]]; then
 fi
 
 if [[ "${tz}" == "" ]]; then
-  echo "[WARNING] Environment 'APP_TIMEZONE' or 'APP_TZ' is NOT set. Default to UTC."
+  echo "[WARNING] Environment 'APP_TIMEZONE' or 'APP_TZ' is NOT set. Default to 'UTC'."
   export APP_TIMEZONE=UTC
   export APP_TZ=UTC
 else
