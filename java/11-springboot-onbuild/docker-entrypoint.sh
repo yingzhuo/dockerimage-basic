@@ -41,6 +41,21 @@ else
 fi
 
 # ----------------------------------------------------------------------------------
+# call shells if the shell exists and execute permission is granted
+# ----------------------------------------------------------------------------------
+if [[ -x "/opt/app-init.sh" ]]; then
+  /opt/app-init.sh
+fi
+
+if [[ -x "/opt/app-init" ]]; then
+  /opt/app-init
+fi
+
+if [[ -x "/opt/init" ]]; then
+  /opt/init
+fi
+
+# ----------------------------------------------------------------------------------
 # wait for other containers (optional)
 # ----------------------------------------------------------------------------------
 docktool --quiet wait -e="DOCKTOOL_WAIT_"
