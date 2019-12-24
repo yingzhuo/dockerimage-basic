@@ -10,6 +10,7 @@ RUN apt-get update && \
                     zip \
                     unzip \
                     bash && \
+    rm -rf /var/lib/apt/lists/* && \
     ln -sf "${JAVA_HOME}/bin/java" /bin/java
 
 COPY --from=quay.io/yingzhuo/docktool:latest /bin/docktool /bin/docktool
