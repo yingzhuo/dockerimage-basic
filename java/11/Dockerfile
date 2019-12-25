@@ -1,9 +1,10 @@
-FROM mcr.microsoft.com/java/jdk:11u5-zulu-alpine
+FROM alpine:3.11.2
 
-MAINTAINER 应卓 yingzhor@gmail.com
+MAINTAINER 应卓 <yingzhor@gmail.com>
 
-RUN apk add --no-cache --update font-adobe-100dpi ttf-dejavu fontconfig curl bash
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk
+ENV PATH $PATH:/usr/lib/jvm/java-11-openjdk/jre/bin:/usr/lib/jvm/java-11-openjdk/bin
 
-COPY --from=quay.io/yingzhuo/docktool:latest /bin/docktool /bin/docktool
-
-CMD ["java", "-version"]
+RUN apk add --update bash curl tar wget ca-certificates unzip \
+        openjdk11 font-adobe-100dpi ttf-dejavu fontconfig \
+    && rm -rf /var/cache/apk/*
