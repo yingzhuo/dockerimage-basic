@@ -8,3 +8,5 @@ ENV PATH $PATH:/usr/lib/jvm/java-11-openjdk/jre/bin:/usr/lib/jvm/java-11-openjdk
 RUN apk add --update bash curl tar wget ca-certificates unzip \
         openjdk11 font-adobe-100dpi ttf-dejavu fontconfig \
     && rm -rf /var/cache/apk/*
+
+COPY --from=quay.io/yingzhuo/docktool:latest /bin/docktool /bin/docktool
