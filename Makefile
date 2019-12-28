@@ -1,4 +1,4 @@
-timestamp             = $(shell /bin/date "+%F %T")
+timestamp := $(shell /bin/date "+%F %T")
 
 no_default:
 	@echo "no defualt target"; false
