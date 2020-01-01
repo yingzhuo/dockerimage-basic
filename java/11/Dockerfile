@@ -14,4 +14,4 @@ RUN apk add --update bash curl tar wget ca-certificates zip unzip openjdk11 font
     rm -rf "$JAVA_HOME/README" && \
     rm -rf "$JAVA_HOME/release"
 
-COPY --from=quay.io/yingzhuo/docktool:latest /bin/docktool /bin/docktool
+COPY --from=yingzhuo/docktool /bin/docktool /bin/docktool

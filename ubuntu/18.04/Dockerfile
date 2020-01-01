@@ -11,4 +11,4 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-COPY --from=quay.io/yingzhuo/docktool:latest /bin/docktool /bin/docktool
+COPY --from=yingzhuo/docktool /bin/docktool /bin/docktool

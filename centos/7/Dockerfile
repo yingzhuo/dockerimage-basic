@@ -11,4 +11,4 @@ RUN yum install -y curl \
     rm -rf /var/cache/yum && \
     rm -rf /var/log/*
 
-COPY --from=quay.io/yingzhuo/docktool:latest /bin/docktool /bin/docktool
+COPY --from=yingzhuo/docktool /bin/docktool /bin/docktool
