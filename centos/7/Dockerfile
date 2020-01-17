@@ -1,6 +1,6 @@
 FROM centos:7.7.1908
 
-MAINTAINER 应卓 yingzhor@gmail.com
+LABEL maintainer="应卓 yingzhor@gmail.com"
 
 RUN yum install -y curl \
                     wget \
