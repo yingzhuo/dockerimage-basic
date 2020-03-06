@@ -1,0 +1,7 @@
+FROM alpine:3.11.3
+
+LABEL maintainer="应卓 yingzhor@gmail.com"
+
+RUN apk add --no-cache curl zip unzip
+
+COPY --from=yingzhuo/docktool /bin/docktool /bin/docktool

@@ -2,10 +2,10 @@ FROM alpine:3.11.3
 
 LABEL maintainer="应卓 yingzhor@gmail.com"
 
-ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk \
-    PATH=$PATH:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin
+ENV JAVA_HOME=/usr/lib/jvm/java-1.7-openjdk \
+    PATH=$PATH:/usr/lib/jvm/java-1.7-openjdk/jre/bin:/usr/lib/jvm/java-1.7-openjdk/bin
 
-RUN apk add --update bash curl tar wget ca-certificates zip unzip openjdk8 font-adobe-100dpi ttf-dejavu fontconfig procps git && \
+RUN apk add --update bash curl tar wget ca-certificates zip unzip openjdk7 font-adobe-100dpi ttf-dejavu fontconfig procps git && \
     rm -rf /var/cache/apk/* && \
     rm -rf "$JAVA_HOME/man/" && \
     rm -rf "$JAVA_HOME/demo/" && \
