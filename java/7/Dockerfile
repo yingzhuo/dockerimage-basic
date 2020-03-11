@@ -12,6 +12,8 @@ RUN apk add --update bash curl tar wget ca-certificates zip unzip openjdk7 font-
     rm -rf "$JAVA_HOME/ASSEMBLY_EXCEPTION" && \
     rm -rf "$JAVA_HOME/LICENSE" && \
     rm -rf "$JAVA_HOME/README" && \
-    rm -rf "$JAVA_HOME/release"
+    rm -rf "$JAVA_HOME/release" && \
+    rm -rf "$JAVA_HOME/THIRD_PARTY_README" && \
+    rm -rf "$JAVA_HOME/samples"
 
 COPY --from=yingzhuo/docktool /bin/docktool /bin/docktool
