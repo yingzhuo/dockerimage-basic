@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-LABEL maintainer="应卓 yingzhor@gmail.com"
+LABEL MAINTAINER="应卓 <yingzhor@gmail.com>"
 
 RUN apt-get update && \
     apt-get install -y curl wget procps zip unzip && \
